@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sessions/new'
+
   get 'users/new'
 
   get 'static_pages/home'
@@ -18,7 +20,13 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   
   resources :users
-
+  
+  get 'login' => 'sessions#new'
+  
+  post 'login' => 'sessions#create'
+  
+  delete 'logout' => 'sessions#destroy'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
