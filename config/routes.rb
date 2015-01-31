@@ -35,6 +35,8 @@ Rails.application.routes.draw do
   
   resources :password_resets, only: [:edit, :update, :new, :create]
   
+  resources :microposts, only: [:create, :destroy]
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
